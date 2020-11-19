@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Employee Details</title>
+    </head>
+    
+    <body>
+    <div align="center">
+        <h2>Employee Details</h2>
+        <br/><br/>
+        
+        <table th:if="${ not #lists.isEmpty(employee) }" border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>User Name</th>
+            
+            <th>Job Title</th>
+            
+            <th>Salary</th>
+            
+            <th>Location</th>
+            
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        	<tr th:each="employee : ${employee}">
+        	
+            	<td th:text="${employee.userName}"></td>
+            
+            	<td th:text="${employee.title}"></td>
+            	
+            	<td th:text="${employee.salary}"></td>
+            	
+            	<td th:text="${employee.location}"></td>
+            	
+            	<td th:text="${employee.email}"></td>
+            	
+        	</tr>
+        </tbody>
+        </table>
+        
+        <br/><br/>
+        <a th:href="@{'/employee/listEmployees'}">Go back to list employees?</a>
+        
+        
+    </div>
+    </body>
+    
+</html>
+

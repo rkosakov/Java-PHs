@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <style>
+		.text {
+			font-size: 150%;
+		}
+	 	div h2 {
+  			display: inline;
+  			margin-right: 1em;
+    	}
+    </style>
+
+  <body>
+ 
+   <div th:switch="${result}"> 
+   <p class="text" th:case="tie"> We have a tie! </p>
+   <p class="text" th:case="win"> You have won! </p>
+   <p class="text" th:case="loss"> You have lost! </p>
+   <p class="text" th:case="*"> This is an error! </p> 
+   </div>
+   
+   <p class="text"> Thanks for playing. Play again? </p>
+
+   <div>
+   	<h2><a href="/playagame?choice=rock">rock</a></h2>
+   	<h2><a href="/playagame?choice=paper">paper</a></h2>
+   	<h2><a href="/playagame?choice=scissors">scissors</a></h2>
+   </div>
+   
+  </body>
+</html>
